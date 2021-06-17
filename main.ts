@@ -21,20 +21,22 @@ input.onButtonPressed(Button.B, function () {
     dir2 = 0
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    if (LOGO <= 1000) {
-        LOGO += 100
-    } else {
-        LOGO = 100
-    }
+	
 })
-let LOGO = 0
+function Create_Apple () {
+	
+}
 let dir2 = 0
 dir2 = 0
 let game2 = 1
 let y = 0
 let x = 0
 let sprite = game.createSprite(x, y)
+let randopos = randint(1, 4)
+let randopos2 = randint(1, 4)
+let rando = game.createSprite(randopos, randopos2)
 while (game2 == 1) {
+    Create_Apple()
     sprite.move(1)
     if (dir2 == 1) {
         sprite.turn(Direction.Right, 90)
@@ -57,10 +59,18 @@ while (game2 == 1) {
             sprite.set(LedSpriteProperty.Y, 3)
         }
     }
-    basic.pause(LOGO)
+    if (x == randopos && y == randopos2) {
+        randopos = randint(1, 3)
+        randopos2 = randint(1, 3)
+        rando = game.createSprite(randopos, randopos2)
+    }
+    basic.pause(200)
 }
 basic.forever(function () {
-    music.playMelody("B A G A G F A C5 ", 120)
+	
+})
+basic.forever(function () {
+	
 })
 basic.forever(function () {
 	
